@@ -10,11 +10,11 @@ const SpecialButton = (props) => {
   //   }
   const strtoNum = parseInt(props.props.calDisplay);
   
-  console.log(strtoNum);
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
       <button
+        className="speBtn"
         id={props.special}
         onClick={() => {
           console.log(props.special);

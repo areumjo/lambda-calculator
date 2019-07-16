@@ -17,7 +17,7 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
   const [calDisplay, setNum] = useState(0);
-  
+  const [calHistory, setHistory] = useState([]);
   console.log(calDisplay);
   const resetBtn = () => setNum(0);
   return (
@@ -26,10 +26,12 @@ function App() {
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display calDisplay={calDisplay}/>
-        <div className="btn-container">
-          <Numbers calDisplay={calDisplay} setNum={setNum}/>
-          <Operators />
-          <Specials calDisplay={calDisplay} setNum={setNum}/>
+        <div className="btn-container">   
+          <div>
+            <Specials calDisplay={calDisplay} setNum={setNum}/>
+            <Numbers calDisplay={calDisplay} setNum={setNum}/>
+          </div>   
+            <Operators calDisplay={calDisplay} setNum={setNum} calHistory={calHistory} setHistory={setHistory}/>
         </div>
       </div>
     </div>
